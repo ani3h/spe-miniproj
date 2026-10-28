@@ -1,5 +1,5 @@
 # ---------- Stage 1: build the JAR with Maven + JDK ----------
-FROM maven:3.9-eclipse-temurin-17 AS build
+FROM maven:3.9-eclipse-temurin-21 AS build
 WORKDIR /app
 
 # Copy only the POM first so the dependency layer is cached until pom.xml changes
@@ -10,7 +10,7 @@ COPY src ./src
 RUN mvn -B -q package -DskipTests
 
 # ---------- Stage 2: slim JRE runtime ----------
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
 # Run as an unprivileged user
