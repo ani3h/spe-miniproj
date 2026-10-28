@@ -95,3 +95,7 @@ On each push, the pipeline:
 
 The pipeline then sends an email for both success and failure. You can safely re-run the Deploy stage:
 Compose only recreates containers whose image changed.
+
+
+## Test Demo
+This is a Demo Test
